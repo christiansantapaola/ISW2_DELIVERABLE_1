@@ -127,7 +127,7 @@ public static void main(String[] args) {
             csvWriter.append("date, noBug, mean, lowerLimit, upperLimit\n");
             for (DatePoint point : histogram.getKeys()) {
                 csvWriter.append(Integer.toString(point.getYear()));
-                csvWriter.append('\\');
+                csvWriter.append('-');
                 csvWriter.append(Integer.toString(point.getMonth()));
                 csvWriter.append(',');
                 csvWriter.append(Integer.toString(histogram.retrieve(point)));
