@@ -12,22 +12,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Stream;
 
 import static java.lang.Math.max;
 
 public class Main {
 
-
-    private void deleteDirectoryStream(Path path) throws IOException {
-        Stream<Path> pathStream = Files.walk(path);
-        pathStream.sorted(Comparator.reverseOrder()).map(Path::toFile).forEach(File::delete);
-        pathStream.close();
-    }
 
 public static void main(String[] args) {
     try {
@@ -48,9 +40,6 @@ public static void main(String[] args) {
         File gitPath = new File(tempRepository + jiraProject + "/.git/");
         File csvOutput = new File(outputFolder + jiraProject + ".csv");
         RepositoryMiner repositoryMiner;
-        if (gitPath.exists()) {
-            main.deleteDirectoryStream(gitPath.toPath().getParent());
-        }
         repositoryMiner = new RepositoryMiner(giturl, gitPath, jiraProject);
         main.getProcessControlChart(repositoryMiner, csvOutput);
     } catch (IOException | GitAPIException e) {
