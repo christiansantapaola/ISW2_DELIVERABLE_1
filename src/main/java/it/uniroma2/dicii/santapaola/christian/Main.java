@@ -119,7 +119,7 @@ public static void main(String[] args) {
                 numBug.add(Double.valueOf(nobug));
             }
             double mean = Statistics.computeMean(numBug);
-            double stdvar = Statistics.computeStandardVariance(numBug);
+            double stdvar = Statistics.computeStandardDeviation(numBug);
             csvWriter.append("date, noBug, mean, lowerLimit, upperLimit\n");
             for (DatePoint point : histogram.getKeys()) {
                 csvWriter.append(Integer.toString(point.getYear()));

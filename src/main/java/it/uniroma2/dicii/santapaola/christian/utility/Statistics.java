@@ -44,7 +44,7 @@ public class Statistics {
      * @param dataset
      * @return
      */
-    public static double computeStandardVariance(Iterable<Double> dataset) {
+    public static double computeStandardDeviation(Iterable<Double> dataset) {
         return Math.sqrt(computeVariance(dataset));
     }
 }
