@@ -29,9 +29,6 @@ public static void main(String[] args) {
         String repositoryFolder = "isw2";
         String outputFolder = "output/";
         File repositoryDirectory = new File(repositoryFolder);
-        if (! repositoryDirectory.exists()) {
-            repositoryDirectory.mkdir();
-        }
         File outputDirectory = new File(outputFolder);
         if (! outputDirectory.exists()) {
             outputDirectory.mkdir();
