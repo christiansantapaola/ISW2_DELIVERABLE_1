@@ -28,7 +28,6 @@ public static void main(String[] args) {
         String giturl = "https://github.com/apache/incubator-s2graph";
         String repositoryFolder = "isw2";
         String outputFolder = "output/";
-        File repositoryDirectory = new File(repositoryFolder);
         File outputDirectory = new File(outputFolder);
         if (! outputDirectory.exists()) {
             outputDirectory.mkdir();
